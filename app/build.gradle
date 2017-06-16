@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+/**
+ * start config and check ci*/
+apply from: '../checkci.gradle'
+
 apply plugin: 'kotlin-android'
 
 android {
@@ -18,6 +22,9 @@ android {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
+  }
+  lintOptions {
+    abortOnError false
   }
 }
 
