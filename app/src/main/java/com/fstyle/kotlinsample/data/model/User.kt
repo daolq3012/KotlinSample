@@ -11,12 +11,9 @@ class User : BaseModel() {
   @SerializedName("login")
   var userLogin: String? = null
   @Expose
-  @SerializedName("id")
   var id: Int? = null
   @Expose
-  @SerializedName("name")
-  var name: String? = null
-  @Expose
-  @SerializedName("avatar_url")
   var avatarUrl: String? = null
+  @Expose
+  var gravatarId: String? = null
 }
