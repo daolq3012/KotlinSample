@@ -31,15 +31,31 @@ android {
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
+
+  Map<String, String> dependencies = rootProject.ext.dependencies
+
+  compile dependencies.kotlin
+  compile dependencies.appCompat
+  compile dependencies.recyclerView
+  compile dependencies.constraintLayout
+  compile dependencies.dialog
+
+  // RxJava & RxAndroid
+  compile dependencies.rxJava
+  compile dependencies.rxAndroid
+
+  // Network
+  compile dependencies.retrofit2
+  compile dependencies.retrofit2Adapter
+  compile dependencies.retrofitGson
+  compile dependencies.loggingInterceptor
+
+  // Test Code
+  testCompile dependencies.junit
+  testCompile dependencies.mockito
+
+  // Test UI
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-  compile 'com.android.support:appcompat-v7:25.3.1'
-  compile 'com.android.support:recyclerview-v7:25.3.1'
-  testCompile 'junit:junit:4.12'
-  compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
-  // Network
-  compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 }

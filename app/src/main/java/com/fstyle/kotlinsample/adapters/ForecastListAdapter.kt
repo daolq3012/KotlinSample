@@ -41,8 +41,8 @@ class ForecastListAdapter(
     return mItems.size
   }
 
-  fun updateData(items: List<User>) {
-    mItems.addAll(items)
+  fun updateData(users: List<User>) {
+    mItems.addAll(users)
     notifyDataSetChanged()
   }
 
@@ -60,7 +60,7 @@ class ForecastListAdapter(
 
     fun bindData(item: User) {
       this.item = item
-      mTextViewForecast.text = item.name
+      mTextViewForecast.text = item.userLogin
     }
   }
 }
