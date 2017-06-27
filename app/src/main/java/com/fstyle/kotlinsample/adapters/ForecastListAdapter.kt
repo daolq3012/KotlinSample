@@ -5,9 +5,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import com.fstyle.kotlinsample.R
 import com.fstyle.kotlinsample.data.model.User
+import kotlinx.android.synthetic.main.layout_item_list_forecast.view.*
 
 /**
  * Created by framgia on 16/06/2017.
@@ -51,9 +51,6 @@ class ForecastListAdapter(
 
     private var item: User? = null
 
-    private val mTextViewForecast: TextView = itemView.findViewById(
-        R.id.txt_info_forecast) as TextView
-
     init {
       itemView.setOnClickListener({ listener.onRecyclerViewItemClick(item) })
     }
@@ -61,7 +58,7 @@ class ForecastListAdapter(
     fun bindData(item: User) {
       this.item = item
       with(item) {
-        mTextViewForecast.text = "$userLogin - $id"
+        itemView.txt_info_forecast.text = "$userLogin - $id"
       }
     }
   }
