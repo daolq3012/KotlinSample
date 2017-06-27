@@ -60,7 +60,9 @@ class ForecastListAdapter(
 
     fun bindData(item: User) {
       this.item = item
-      mTextViewForecast.text = item.userLogin
+      with(item) {
+        mTextViewForecast.text = "$userLogin - $id"
+      }
     }
   }
 }

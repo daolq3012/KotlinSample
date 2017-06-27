@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), OnRecyclerViewItemClickListener<User> 
     list_forecast.adapter = adapter
     val userRepository: UserRepository = UserRepositoryImpl(GitHubServiceClient.getInstance())
     // TODO update later
-    userRepository.searchUsers("", 10).subscribeOn(Schedulers.io()).observeOn(
+    userRepository.searchUsers("abc", 10).subscribeOn(Schedulers.io()).observeOn(
         AndroidSchedulers.mainThread()).subscribe({ items -> adapter.updateData(items) },
         { error ->
           run {
